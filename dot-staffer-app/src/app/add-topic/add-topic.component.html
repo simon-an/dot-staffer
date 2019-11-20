@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input matInput placeholder="ID" #id />
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Name" #name />
+</mat-form-field>
+<mat-form-field>
+  <input matInput type="number" placeholder="slot" #slot />
+</mat-form-field>
+<button mat-button (click)="addTopic({ id: id.value, name: name.value, slot: slot.value })">Add Topic</button>

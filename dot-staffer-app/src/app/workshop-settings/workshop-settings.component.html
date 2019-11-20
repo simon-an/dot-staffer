@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput type="number" placeholder="participants" formControlName="participants" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="criticers" formControlName="criticers" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="discussers" formControlName="discussers" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="slots" formControlName="slots" />
+  </mat-form-field>
+  <button mat-button type="submit">Save</button>
+</form>
