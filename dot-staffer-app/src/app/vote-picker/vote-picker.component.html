@@ -1,0 +1,16 @@
+<form (ngSubmit)="addVote()" [formGroup]="form">
+  <mat-form-field>
+    <input matInput placeholder="person name" formControlName="person" />
+    <mat-error *ngIf="form.get('person').invalid">Person name is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="topic" formControlName="topicId" />
+    <mat-error *ngIf="form.get('topicId').invalid">Topic Id is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="prio" formControlName="prio" />
+    <mat-error *ngIf="form.get('prio').invalid">Prio must be within 1 and 3</mat-error>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="form.invalid" mat-mini-fab><mat-icon>add</mat-icon></button>
+</form>

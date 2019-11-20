@@ -1,0 +1,4 @@
+{
+    "npm.enableScriptExplorer": true,
+    "files.autoSave": "onFocusChange"
+}
