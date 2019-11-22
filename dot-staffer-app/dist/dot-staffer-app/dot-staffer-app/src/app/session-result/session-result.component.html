@@ -1,9 +1,0 @@
-Sessions
-<div *ngIf="sessions.length === 0">No Sessions yet</div>
-<mat-chip-list>
-  <div *ngFor="let session of sessions">
-    <span matBadgeOverlap="true" matBadgeSize="small" [matBadge]="session.discussers.length"></span>
-    <mat-chip (click)="sessionSelected.emit(session.topicId)">{{ session.topicId }}</mat-chip>
-    <span matBadgeColor="accent" matBadgeOverlap="true" matBadgeSize="small" [matBadge]="session.criticers.length"></span>
-  </div>
-</mat-chip-list>
