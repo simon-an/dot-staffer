@@ -1,0 +1,10 @@
+<button mat-button (click)="clearList()">Clear List</button>
+<mat-list>
+  <mat-list-item *ngFor="let person of persons">
+    <mat-icon mat-list-icon>person</mat-icon>
+    <p mat-line>{{ person }}</p>
+    <button mat-icon-button (click)="deleteOne(person)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

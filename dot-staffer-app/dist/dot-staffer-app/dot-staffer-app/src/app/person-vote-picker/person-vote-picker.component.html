@@ -1,0 +1,48 @@
+<form (ngSubmit)="addVote()" [formGroup]="form">
+  <mat-form-field>
+    <ng-container *ngIf="!persons; else personlist">
+      <input matInput placeholder="person name" formControlName="person" />
+    </ng-container>
+    <ng-template #personlist>
+      <mat-select placeholder="person" formControlName="person">
+        <mat-option *ngFor="let p of persons" [value]="p">
+          {{ p }}
+        </mat-option>
+      </mat-select>
+    </ng-template>
+    <mat-error *ngIf="form.get('person').invalid">Person name is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <input matInput placeholder="topic" formControlName="topicId1" /> -->
+    <mat-label>Topic1</mat-label>
+    <mat-select placeholder="topic" formControlName="topicId1">
+      <mat-option *ngFor="let topic of topics" [value]="topic.id">
+        {{ topic.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('topicId1').invalid">Topic Id is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <input matInput placeholder="topic" formControlName="topicId2" />
+     -->
+    <mat-label>Topic2</mat-label>
+    <mat-select placeholder="topic" formControlName="topicId2">
+      <mat-option *ngFor="let topic of topics" [value]="topic.id">
+        {{ topic.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('topicId2').invalid">Topic Id is invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <input matInput placeholder="topic" formControlName="topicId3" /> -->
+    <mat-label>Topic3</mat-label>
+    <mat-select placeholder="topic" formControlName="topicId3">
+      <mat-option *ngFor="let topic of topics" [value]="topic.id">
+        {{ topic.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('topicId3').invalid">Topic Id is invalid</mat-error>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="form.invalid" mat-mini-fab><mat-icon>add</mat-icon></button>
+</form>
